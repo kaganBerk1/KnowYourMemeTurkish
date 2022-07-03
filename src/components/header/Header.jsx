@@ -8,13 +8,18 @@ export default function Header() {
     setValue(event.target.value)
   }
   return (
-    <div className='HeaderContainer'>
-        <div className='logo'>Bunun Nesi Komik</div>
-        <div className='search'>
-            <Icon className='icon' icon="bx:search-alt" />
-            <input className='searchText' onClick={()=>{
-                setValue("")
-            }} type="text" value={value}  onChange={(event)=>handleText(event)}/>
+    <div>
+        <div className='HeaderContainer'>
+            <div className='logo'>Bunun Nesi Komik</div>
+            <div className='search'>
+                <Icon className='icon' icon="bx:search-alt" />
+                <input className='searchText' onClick={()=>{
+                    setValue("")
+                }} type="text" value={value}  onChange={(event)=>handleText(event)}/>
+            </div>
+        </div>
+        <div className='Tabs'>
+                <span>Bütün Mimler</span>
         </div>
     </div>
   )
