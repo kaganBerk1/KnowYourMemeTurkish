@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    border-bottom: 3px dotted #CCCCCC;
     .InfoContainer{
         display: flex;
         flex-direction: column;
@@ -13,6 +14,8 @@
         div{
             font-size: 18px;
         }
+        margin-bottom: 20px;
+        
     }
     .title{
         font-size: 40px;
