@@ -6,7 +6,7 @@ $tablet:1024px;
 $large: 1450px;
 $xlarge: 1680px;
 $xxlarge: 1920px;
-$xxxlarge: 2560px;
+$xxxlarge: 6000px;
 
 
 @mixin respondTo($media) {
@@ -39,7 +39,7 @@ $xxxlarge: 2560px;
       @content;
     }
   } @else if $media == desktop {
-    @media  (min-width:$tablet ) and (max-width: $xlarge) {
+    @media  (min-width:$tablet ) and (max-width: $xxxlarge) {
       @content;
     }
   } @else if $media == xlarge {
