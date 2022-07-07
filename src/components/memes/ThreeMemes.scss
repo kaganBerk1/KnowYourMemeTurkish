@@ -1,7 +1,19 @@
+@import "../../style/mixins" ;
 .memesContainer{
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+    min-width: 600px;
+    min-height: 550px;
+    @include respondTo(mobile){
+        min-height: 300px;
+    } 
+    @include respondTo(xsmobile){
+        min-height: 400px;
+    }
+    @include respondTo(tablet){
+
+    }
     .memeContainer{
         width: 350px;
         height: 300px;
@@ -9,7 +21,6 @@
         border-radius: 30px;
         display: flex;
         flex-direction: column;
-        margin-left: 16px;
         cursor: pointer;
 
         .writer{

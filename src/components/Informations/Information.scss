@@ -4,11 +4,13 @@
     align-items: center;
     width: 100%;
     border-bottom: 3px dotted #CCCCCC;
+    margin-top: 30px;
+    overflow-x:hidden;
     .InfoContainer{
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 800px;
+        max-width: 370px;
         text-align: center;
         margin-top: 40px;
         div{
