@@ -1,13 +1,22 @@
 import { useState } from 'react'
-import './App.css'
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Memes from "./Pages/Memes";
+import Meme from './Pages/Meme';
 function App() {
 
 
   return (
-    <div className="App">
-    asdasdasdas
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route   path="/" element={<Home />}/>
+          <Route   path="home" element={<Home />} />
+          <Route   path="memes" element={<Memes />}>
+               <Route   path=":memeID" element={<Meme />} />
+          </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

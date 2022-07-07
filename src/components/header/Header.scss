@@ -1,0 +1,114 @@
+@import "../../style/mixins" ;
+
+.HeaderContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    border-bottom: 3px dotted #CCCCCC;
+    @include respondTo(desktop){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .logo{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        color:#FF9F29;
+        font-size: 40px;
+        font-style: italic;
+        position: relative;
+        top:30px;
+        cursor: pointer;
+        text-decoration: none;
+        @include respondTo(xsmobile){
+            font-size: 36px;
+        }
+        @include respondTo(desktop){
+            font-size: 50px;
+            left: 55px;
+            top:0;
+        }
+    }
+    
+    .search{
+        border-radius: 20px;
+        background-color: #EDDBDB;
+        position: relative;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        height: 50px;
+        top:120px;
+        @include respondTo(xsmobile){
+            width: 260px;
+        }
+        @include respondTo(mobile){
+            width: 350px;
+        }
+        @include respondTo(miniTablet){
+            width: 600px;
+        }
+        @include respondTo(desktop){
+            width: 350px;
+            height: 40px;
+            right: 55px;
+            top:0;
+        }
+        .icon{
+            width: 24px;
+            height: 24px;
+            margin-left: 20px;
+            border-right: 2px solid black;
+        }
+        .searchText{
+            background:transparent;
+            border:none;
+            margin-left: 5px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 100;
+            color:#4F4B4B;
+            font-style: italic;
+            font-size: 25px;
+            width: 75%;
+            padding-right: 40px;
+            &:focus{
+                outline: none;
+            }
+        }
+        
+    
+    }
+}
+.Tabs{
+    height: 50px;
+    border-bottom: 3px dotted #CCCCCC;
+    display: flex;
+    align-items: center;
+    @include respondTo(xsmobile){
+        padding-left: 15px;
+    }
+    @include respondTo(mobile){
+        padding-left: 23px;
+    }
+    @include respondTo(miniTablet){
+        padding-left: 115px;
+    }
+    @include respondTo(largeMobile){
+        padding-left: 40px;
+    }
+    @include respondTo(doubleScreen){
+          padding-left: 40px;
+    }
+    @include respondTo(desktop){
+        padding-left: 55px;
+    }
+    span{
+        font-size: 20px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        color:#6A3131;
+        cursor: pointer;
+    }
+}
