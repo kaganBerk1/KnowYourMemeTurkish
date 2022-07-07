@@ -20,6 +20,7 @@
         position: relative;
         top:30px;
         cursor: pointer;
+        text-decoration: none;
         @include respondTo(xsmobile){
             font-size: 36px;
         }

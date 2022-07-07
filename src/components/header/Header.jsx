@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
+import { Link } from "react-router-dom";
 import "./Header.scss"
 export default function Header() {
   const [value, setValue] = useState("Ara...");
@@ -10,7 +11,7 @@ export default function Header() {
   return (
     <div>
         <div className='HeaderContainer'>
-            <div className='logo'>Bunun Nesi Komik</div>
+            <Link  to="/home" className='logo'>Bunun Nesi Komik</Link >
             <div className='search'>
                 <Icon className='icon' icon="bx:search-alt" />
                 <input className='searchText' onClick={()=>{
