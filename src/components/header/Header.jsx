@@ -20,7 +20,8 @@ export default function Header() {
             </div>
         </div>
         <div className='Tabs'>
-                <span>Bütün Mimler</span>
+                <Link  to="/memes" className='allMemes'>Bütün Mimler</Link >
+
         </div>
     </div>
   )
