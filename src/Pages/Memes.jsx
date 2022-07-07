@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/header/Header'
 import userPhoto from "./../images/userPhoto.jpg"
+import { Link } from "react-router-dom";
 import "./Memes.scss"
 export default function Memes() {
   let dummyObjects=[
@@ -127,14 +128,14 @@ export default function Memes() {
         {
          dummyObjects.map((el)=>{
               return(
-                  <div className='wholeMemes' key={el.id}>
+                  <Link className='wholeMemes' to={`/memes/${el.id}`} key={el.id}>
                     <img src={el.image}></img>
                     <div className='memeDescription'>{el.title}</div>
                     <span className='writer'>
                       <img  className="writerImage"  src={userPhoto} alt="" />
                       {el.admin}
                       </span>
-                  </div>
+                  </Link>
               )
           })
         }

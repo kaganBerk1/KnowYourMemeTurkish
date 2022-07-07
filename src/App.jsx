@@ -12,9 +12,8 @@ function App() {
       <Routes>
           <Route   path="/" element={<Home />}/>
           <Route   path="home" element={<Home />} />
-          <Route   path="memes" element={<Memes />}>
-               <Route   path=":memeID" element={<Meme />} />
-          </Route>
+          <Route   path="memes" element={<Memes />}/>
+          <Route   path="memes/:memeID" element={<Meme />} />
       </Routes>
     </BrowserRouter>
   )

@@ -21,7 +21,7 @@
         background-color: transparent;
         border-radius: 20px;
         border: 1px dotted #CCCCCC;
-
+        text-decoration: none;
         @include respondTo(xsmobile){
             width: 250px;
             height:200px;
