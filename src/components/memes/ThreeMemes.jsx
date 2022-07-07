@@ -37,7 +37,7 @@ export default function ThreeMemes() {
     <div className='Container'>
         <span className='titleThreeMeme'>Son Eklenenler</span>
         <div className='memesContainer'>
-        <Carousel className='carousel' tiltEasing='ease' enableAutoPlay={true} autoPlaySpeed={5000} showArrows={false} itemsToShow={width>750?2:1}>
+        <Carousel className='carousel' tiltEasing='ease' enableAutoPlay={true} autoPlaySpeed={5000} showArrows={false} itemsToShow={(width>1300)?3:width>720?2:1}>
         {
             dummyObjects.map((el)=>{
                 return(

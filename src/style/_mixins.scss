@@ -3,7 +3,7 @@ $small: 376px;
 $mobile:450px;
 $miniTablet: 768px;
 $tablet:1024px;
-$large: 1440px;
+$large: 1450px;
 $xlarge: 1680px;
 $xxlarge: 1920px;
 $xxxlarge: 2560px;
@@ -39,7 +39,7 @@ $xxxlarge: 2560px;
       @content;
     }
   } @else if $media == desktop {
-    @media (min-width: $large) {
+    @media  (min-width:$tablet ) and (max-width: $xlarge) {
       @content;
     }
   } @else if $media == xlarge {

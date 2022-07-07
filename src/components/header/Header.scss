@@ -6,6 +6,11 @@
     align-items: center;
     height: 100px;
     border-bottom: 3px dotted #CCCCCC;
+    @include respondTo(desktop){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
     .logo{
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
@@ -16,6 +21,11 @@
         top:30px;
         @include respondTo(xsmobile){
             font-size: 36px;
+        }
+        @include respondTo(desktop){
+            font-size: 50px;
+            left: 55px;
+            top:0;
         }
     }
     
@@ -39,8 +49,10 @@
             width: 600px;
         }
         @include respondTo(desktop){
-            width: 414px;
-            height: 50px;
+            width: 350px;
+            height: 40px;
+            right: 55px;
+            top:0;
         }
         .icon{
             width: 24px;
@@ -86,6 +98,9 @@
     }
     @include respondTo(doubleScreen){
           padding-left: 40px;
+    }
+    @include respondTo(desktop){
+        padding-left: 55px;
     }
     span{
         font-size: 20px;

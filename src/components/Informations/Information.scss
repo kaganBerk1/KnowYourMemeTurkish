@@ -19,6 +19,10 @@
         @include respondTo(miniTablet){
             max-width: 600px;
         }
+        @include respondTo(desktop){
+            margin-top: 0px;
+            max-width: 800px;
+        }
         div{
             font-size: 18px;
         }
