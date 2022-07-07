@@ -1,19 +1,8 @@
 @import "../../style/mixins" ;
 .memesContainer{
-    display: flex;
-    flex-direction: row;
     margin-bottom: 20px;
-    min-width: 600px;
-    min-height: 550px;
-    @include respondTo(mobile){
-        min-height: 300px;
-    } 
-    @include respondTo(xsmobile){
-        min-height: 400px;
-    }
-    @include respondTo(tablet){
+    width: 100%;
 
-    }
     .memeContainer{
         width: 350px;
         height: 300px;
@@ -22,7 +11,10 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
-
+        @include respondTo(xsmobile){
+            width: 250px;
+            height: 200px;
+        }
         .writer{
             position: relative;
             bottom:20px;
@@ -35,7 +27,11 @@
             height: 200px;
             border-radius: 30px 30px 0 0;
             position: relative;
-            bottom:20px
+            bottom:20px;
+            @include respondTo(xsmobile){
+                width: 250px;
+                height: 150px;
+            }
         }
         .memeDescription{
             display: -webkit-box;
@@ -50,6 +46,10 @@
             padding-right: 10px;
             text-overflow: ellipsis; 
             text-align: left;
+            @include respondTo(xsmobile){
+                font-size: 15px;
+                margin-top: -20px;
+            }
         }
     }
 }
@@ -59,6 +59,6 @@
     font-size: 40px;
     color: #6A3131;
     font-weight: 600px;
-    margin-top: 20px;
+    margin-top: -10px;
     margin-bottom: 30px;
 }
