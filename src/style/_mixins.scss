@@ -2,12 +2,13 @@ $xsmall: 360px;
 $small: 376px;
 $mobile:450px;
 $miniTablet: 768px;
-$tablet:1024px;
+$tablet:1025px;
 $large: 1450px;
 $xlarge: 1680px;
 $xxlarge: 1920px;
+$xl: 2600px;
 $xxxlarge: 6000px;
-
+$xxxxlarge: 9000px;
 
 @mixin respondTo($media) {
   @if $media == mobile {
@@ -50,9 +51,15 @@ $xxxlarge: 6000px;
     @media (min-width: $xxlarge) {
       @content;
     }
+  }
+   @else if $media == maxView {
+    @media  (min-width:$xl ) and (max-width: $xxxxlarge)  {
+      @content;
+    }
   } @else if $media == xxxlarge {
     @media (min-width: $xxxlarge) {
       @content;
     }
   }
+  
 }
