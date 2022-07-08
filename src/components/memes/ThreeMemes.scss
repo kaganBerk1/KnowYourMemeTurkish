@@ -2,7 +2,9 @@
 .memesContainer{
     margin-bottom: 20px;
     width: 100%;
-
+    @include respondTo(desktop){
+        max-width: 1200px;
+    }
     .memeContainer{
         width: 350px;
         height: 300px;
