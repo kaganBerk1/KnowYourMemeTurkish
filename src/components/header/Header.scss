@@ -111,5 +111,8 @@
         font-weight: 600;
         color:#6A3131;
         cursor: pointer;
+        @include respondTo(largeMobile){
+            font-size: 17px;
+        }
     }
 }
