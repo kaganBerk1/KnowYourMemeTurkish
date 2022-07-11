@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Memes from "./Pages/Memes";
 import Meme from './Pages/Meme';
+import Login from './Pages/Login';
 function App() {
   const [width, setWidth] = React.useState(window.innerWidth);
 
@@ -24,6 +25,7 @@ function App() {
           <Route   path="home" element={<Home />} />
           <Route   path="memes" element={<Memes  width={width} />}/>
           <Route   path="memes/:memeID" element={<Meme width={width} />} />
+          <Route   path="login" element={<Login width={width} />} />
       </Routes>
     </BrowserRouter>
   )
