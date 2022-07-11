@@ -21,7 +21,7 @@
         background-color: transparent;
         border-radius: 20px;
         border: 1px dotted #CCCCCC;
-
+        text-decoration: none;
         @include respondTo(xsmobile){
             width: 250px;
             height:200px;
@@ -29,7 +29,8 @@
         @include respondTo(desktop){
             width: 550px;
             height:400px;
-            margin-left: 20px;
+            margin-left:40px;
+            margin-right: 40px;
         }
     
         @include respondTo(miniTablet){

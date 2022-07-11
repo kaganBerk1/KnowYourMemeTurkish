@@ -3,6 +3,7 @@ $small: 376px;
 $mobile:450px;
 $miniTablet: 768px;
 $tablet:1025px;
+$breakPoint:1215px;
 $large: 1450px;
 $xlarge: 1680px;
 $xxlarge: 1920px;
@@ -22,6 +23,11 @@ $xxxxlarge: 9000px;
   }
   @else if $media == largeMobile {
     @media (min-width:$small ) and (max-width: $mobile) {
+      @content;
+    }
+  }
+  @else if $media == breakPoint {
+    @media (min-width:$tablet ) and (max-width: $breakPoint) {
       @content;
     }
   }
