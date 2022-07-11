@@ -29,7 +29,8 @@
         @include respondTo(desktop){
             width: 550px;
             height:400px;
-            margin-left: 20px;
+            margin-left:40px;
+            margin-right: 40px;
         }
     
         @include respondTo(miniTablet){
