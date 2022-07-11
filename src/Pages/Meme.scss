@@ -9,14 +9,12 @@
     @include respondTo(desktop){
         margin-top: 20px;
         display: flex;
-        flex-direction: row;
+        width: 100%;
     }
     .SingleMeme{
-        padding:0 20px 0px 20px;
-        @include respondTo(desktop){
-            display: flex;
-            flex-direction: row;
-            height: 100%;
+        padding:0 50px 0px 50px;
+        @include respondTo(desktop){  
+            width: 100%;
         }
         .memeImage{
             width: 100%;
@@ -26,7 +24,8 @@
                 min-height: auto;
              }
              @include respondTo(desktop){
-                width: 600px;
+                max-width: 600px;
+
              }
         }
         .memeTitle{
@@ -45,23 +44,31 @@
              @include respondTo(xsmobile){
                 font-size: 22px;
              }
+             @include respondTo(desktop){
+                width:100%;
+                height: 50px;
+                margin-top: 10px;
+                font-size: 42px;
+             }
         }
         .descriptionTite{
             font-family: 'Source Sans Pro', sans-serif;
-                padding-top: 10px;
-                margin-top: 10px;
-                text-align: justify;
-                font-size: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                color: rgb(52, 51, 51);
-                font-weight: 600;
-                
-                border-top: 3px dotted #CCCCCC;
-                @include respondTo(desktop){
-                    border: none;
-                }
+            padding-top: 10px;
+            margin-top: 10px;
+            text-align: justify;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: rgb(52, 51, 51);
+            font-weight: 600;
+            border-top: 3px dotted #CCCCCC;
+            @include respondTo(desktop){
+                border: none;
+                height: 60px;
+                margin-left: 50px;
+                margin-top: 60px;
+            }
             @include respondTo(miniTablet){
                 font-size: 30px;
              }
@@ -75,11 +82,22 @@
                 font-size: 20px;
                 text-indent: 20px;
                 color: black;
+                word-wrap: break-word;
+                
             @include respondTo(miniTablet){
                 font-size: 24px;            
              }
              @include respondTo(xsmobile){
                 font-size: 18px;
+             }
+             @include respondTo(desktop){
+                width: 100%;
+                margin-left: 50px;
+                min-height: 120px;
+                width: 95%;
+                
+                
+                
              }
         }
         .relatedLinks{
@@ -88,7 +106,7 @@
             justify-content: center;
             align-items: flex-start;
             max-width: 100%;
-            margin-left: 20px;
+            margin-left: 40px;
              a:link {
                 text-decoration: none;
                 color: black;
@@ -98,6 +116,10 @@
             }
             @include respondTo(xsmobile){
                 margin-right: 25px;
+             }
+             @include respondTo(desktop){
+                min-height: 120px;
+         
              }
         }
         .relatedLink{
@@ -113,6 +135,10 @@
                 font-size: 15px;
                 margin-left: -10px;
              }
+             @include respondTo(desktop){
+                position: relative;
+                left: 80px;
+             }
         }
         .writer{
             display: flex;
@@ -120,6 +146,12 @@
             align-items: center;
             margin-top: 20px;
             padding-bottom:20px;
+            @include respondTo(desktop){
+                margin-left: 5px;
+            }
+            @include respondTo(desktop){
+                margin-bottom: 80px;
+              }
              .writerImage{
                 width:40px;
                 height: 40px;
@@ -129,6 +161,9 @@
                    height: 50px;
                    border-radius: 50%;
                   
+                  }
+                  @include respondTo(desktop){
+                    margin-left: 80px;
                   }
              }
              .writerName{
@@ -141,4 +176,15 @@
              }
         }
     }
+}
+.memeDescriptionWrap{
+   @include respondTo(desktop){
+    max-width: 600px; 
+   }
+   @include respondTo(breakPoint){
+        max-width: 400px; 
+   }
+}
+.bottomMargin{
+    margin-bottom: 80px; 
 }

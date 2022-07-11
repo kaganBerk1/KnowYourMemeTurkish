@@ -22,8 +22,8 @@ function App() {
       <Routes>
           <Route   path="/" element={<Home />}/>
           <Route   path="home" element={<Home />} />
-          <Route   path="memes" element={<Memes  props={width} />}/>
-          <Route   path="memes/:memeID" element={<Meme props={width} />} />
+          <Route   path="memes" element={<Memes  width={width} />}/>
+          <Route   path="memes/:memeID" element={<Meme width={width} />} />
       </Routes>
     </BrowserRouter>
   )
