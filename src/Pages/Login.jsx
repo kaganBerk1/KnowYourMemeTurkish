@@ -4,8 +4,9 @@ import AuthContext from '../Context/AuthProvider'
 import React from 'react'
 import Header from '../components/header/Header'
 import "./Login.scss"
+import useAuth from '../hooks/useAuth'
 export default function Login() {
-  const {setAuth} = useContext(AuthContext);
+  const {setAuth} = useAuth();
   const [userName,setUserName]= useState("")
   const [userPassword,setUserPassword]= useState("")
 
