@@ -1,17 +1,24 @@
 import Axios  from 'axios'
+import {useRef,useState,useEffect,useContext} from "react"
+import AuthContext from '../Context/AuthProvider'
 import React from 'react'
 import Header from '../components/header/Header'
 import "./Login.scss"
 export default function Login() {
-  const [userName,setUserName]= React.useState("")
-  const [userPassword,setUserPassword]= React.useState("")
+  const {setAuth} = useContext(AuthContext);
+  const [userName,setUserName]= useState("")
+  const [userPassword,setUserPassword]= useState("")
 
   const signIn = ()=>{
      Axios.post("http://localhost:8000/api/signin",{
        name:userName,
        password:userPassword
-     }).then((res)=>{
-      console.log(res)
+     }
+     ).then((res)=>{
+       console.log(res)
+       setAuth({userName});
+     }).catch((err)=>{
+         console.log(err)
      })
   }
 
