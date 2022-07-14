@@ -1,8 +1,11 @@
 import React from 'react'
 import Header from '../components/header/Header'
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 import "./CreateMeme.scss"
 export default function CreateMeme() {
   const [selectedImage, setSelectedImage] = React.useState(null);
+
   return (
     <div>
         <Header></Header>

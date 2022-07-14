@@ -1,12 +1,15 @@
 import Axios  from 'axios'
 import {useRef,useState,useEffect,useContext} from "react"
-import AuthContext from '../Context/AuthProvider'
+import { Link,useNavigate,useLocation, Navigate } from 'react-router-dom'
 import React from 'react'
 import Header from '../components/header/Header'
 import "./Login.scss"
 import useAuth from '../hooks/useAuth'
 export default function Login() {
   const {setAuth} = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from= location.state?.from?.pathname || "/create";
   const [userName,setUserName]= useState("")
   const [userPassword,setUserPassword]= useState("")
 
@@ -17,7 +20,9 @@ export default function Login() {
      }
      ).then((res)=>{
        console.log(res)
-       setAuth({userName});
+       let token = res.data.token
+       setAuth({userName,token});
+       navigate(from);
      }).catch((err)=>{
          console.log(err)
      })

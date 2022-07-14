@@ -6,6 +6,8 @@ import Memes from "./Pages/Memes";
 import Meme from './Pages/Meme';
 import Login from './Pages/Login';
 import CreateMeme from './Pages/CreateMeme';
+import RequireAuth from './components/RequireAuth';
+
 function App() {
   const [width, setWidth] = React.useState(window.innerWidth);
 
@@ -27,7 +29,9 @@ function App() {
           <Route   path="memes" element={<Memes  width={width} />}/>
           <Route   path="memes/:memeID" element={<Meme width={width} />} />
           <Route   path="login" element={<Login width={width} />} />
-          <Route   path="create" element={<CreateMeme width={width} />} />
+          <Route element={<RequireAuth></RequireAuth>}>
+            <Route   path="create" element={<CreateMeme width={width} />} />
+          </Route>
       </Routes>
     </BrowserRouter>
   )
