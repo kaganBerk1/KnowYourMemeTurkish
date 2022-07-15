@@ -1,10 +1,10 @@
-import Axios  from 'axios'
 import {useRef,useState,useEffect,useContext} from "react"
 import { Link,useNavigate,useLocation, Navigate } from 'react-router-dom'
 import React from 'react'
 import Header from '../components/header/Header'
 import "./Login.scss"
 import useAuth from '../hooks/useAuth'
+import axios from '../Api/axios'
 export default function Login() {
   const {setAuth} = useAuth();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Login() {
   const [userPassword,setUserPassword]= useState("")
 
   const signIn = ()=>{
-     Axios.post("http://localhost:8000/api/signin",{
+     axios.post("/api/signin",{
        name:userName,
        password:userPassword
      }

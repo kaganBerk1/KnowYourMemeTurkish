@@ -1,10 +1,10 @@
 import React from 'react'
-import axios from "axios";
 import Header from '../components/header/Header'
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 import "./CreateMeme.scss"
 import useAuth from '../hooks/useAuth';
+import axios from '../Api/axios';
 export default function CreateMeme() {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [description, setDescription] = React.useState("");

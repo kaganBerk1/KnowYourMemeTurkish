@@ -3,12 +3,12 @@ import Header from '../components/header/Header'
 import { Link } from "react-router-dom";
 import "./Memes.scss"
 import { useEffect } from 'react';
-import axios from "axios";
+import axios from '../Api/axios'
 export default function Memes() {
   const [memes,setMemes]= React.useState([]);
 
  useEffect(()=>{
-    axios.get("http://localhost:8000/api/memes").then(res => {
+    axios.get("/api/memes").then(res => {
       console.log(res)
       setMemes(res?.data?.memes)
     }).catch((err)=>{

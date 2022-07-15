@@ -1,6 +1,6 @@
 import React from 'react'
+import axios from '../Api/axios'
 import Header from '../components/header/Header'
-import axios from "axios"
 import "./Meme.scss"
 export default function Meme(props) {
   const[meme,setMeme] = React.useState({})
