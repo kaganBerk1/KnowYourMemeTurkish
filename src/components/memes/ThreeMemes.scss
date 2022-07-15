@@ -15,6 +15,7 @@
         cursor: pointer;
         border: 1px solid black ;
         text-decoration: none;
+        margin-top: 30px;
         @include respondTo(xsmobile){
             width: 250px;
             height: 200px;
@@ -22,10 +23,11 @@
         
         .writer{
             position: relative;
-            bottom:20px;
+            bottom:30px;
             color:#D40404;
             font-weight: 600;
             left:20px
+            
         }
         .memeImage{
             width: 350px;
@@ -54,6 +56,7 @@
             text-overflow: ellipsis; 
             text-align: left;
             color: black;
+            text-align: center;
             @include respondTo(xsmobile){
                 font-size: 15px;
                 margin-top: -20px;

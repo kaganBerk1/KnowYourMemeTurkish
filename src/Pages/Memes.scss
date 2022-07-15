@@ -11,6 +11,10 @@
     @include respondTo(maxView){
         padding: 0 500px;
     }
+    .noFound{
+        font-size: 24px;
+        font-weight: 500;
+    }
     .wholeMemes{
         display: flex;
         flex-direction: column;
