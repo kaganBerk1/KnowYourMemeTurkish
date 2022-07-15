@@ -6,9 +6,9 @@ import { useEffect } from 'react';
 import axios from '../Api/axios'
 export default function Memes() {
   const [memes,setMemes]= React.useState([]);
-  const {searchText} = useLocation();
   const location = useLocation();
  useEffect(()=>{
+    let path=window.location.search
     if(path.includes("searchText")){
       getMemesBySearchText();
     }else{

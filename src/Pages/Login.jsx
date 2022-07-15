@@ -19,9 +19,11 @@ export default function Login() {
        password:userPassword
      }
      ).then((res)=>{
-       console.log(res)
        let token = res.data.token
        setAuth({userName,token});
+
+      window.localStorage.setItem("token", token);
+
        navigate(from);
      }).catch((err)=>{
          console.log(err)

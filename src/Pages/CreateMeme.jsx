@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/header/Header'
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import "./CreateMeme.scss"
 import useAuth from '../hooks/useAuth';
@@ -13,6 +13,13 @@ export default function CreateMeme() {
   const [adminNotes, setAdminNotes] = React.useState("");
   const [relatedLinks, setRelatedLinks] = React.useState([]);
   const {auth} = useAuth();
+  const navigate = useNavigate();
+  React.useEffect(()=>{
+        if(window.localStorage.getItem("token")!==auth.token){
+            navigate("/login");
+        }
+  })
+
   const onFormSubmit = e =>{
     e.preventDefault()
     const formData = new FormData()
@@ -33,7 +40,6 @@ export default function CreateMeme() {
         const newState = [...relatedLinks]
         newState[index] = newValue
         setRelatedLinks(newState)
-        console.log(relatedLinks)
     }
   return (
     <div>
