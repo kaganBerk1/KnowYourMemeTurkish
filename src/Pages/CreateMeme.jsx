@@ -23,10 +23,10 @@ export default function CreateMeme() {
     formData.append('writerNote', adminNotes);
     formData.append('relatedLinks', relatedLinks);
     formData.append('admin', auth?.userName);
-
-    console.log(formData)
     axios.post("http://localhost:8000/api/memeCreate",formData).then(res => {
         console.log(res)
+    }).catch((err)=>{
+        console.log(err)
     })
 }
     function relatedLinkHandle(index,newValue){
