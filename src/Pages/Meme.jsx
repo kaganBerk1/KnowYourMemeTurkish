@@ -34,7 +34,7 @@ export default function Meme(props) {
     flexDirection:"row",
     justifyContent:"center",
     alignItems:"center",
-    borderBottom:"3px dotted #CCCCCC",
+    borderBottom:"1px solid #CCCCCC",
     paddingBottom:"30px",
    
   }
@@ -43,7 +43,8 @@ export default function Meme(props) {
     flexWrap:"wrap",
     width:"100%",
     justifyContent:"center",
-    marginLeft:"40px"
+    marginLeft:"40px",
+
   }
   return (
     <div>

@@ -13,7 +13,8 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
-        border: 1px dashed black ;
+        border: 1px solid black ;
+        text-decoration: none;
         @include respondTo(xsmobile){
             width: 250px;
             height: 200px;
@@ -52,11 +53,13 @@
             padding-right: 10px;
             text-overflow: ellipsis; 
             text-align: left;
+            color: black;
             @include respondTo(xsmobile){
                 font-size: 15px;
                 margin-top: -20px;
             }
         }
+
     }
 }
 .titleThreeMeme{

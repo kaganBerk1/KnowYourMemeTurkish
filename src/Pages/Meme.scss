@@ -20,12 +20,14 @@
             width: 100%;
             min-height: 200px;
             border-radius: 20px;
+            object-fit: cover;
+            border:1px solid black;
             @include respondTo(miniTablet){
                 min-height: auto;
              }
              @include respondTo(desktop){
                 max-width: 600px;
-
+                max-height: 300px;
              }
         }
         .memeTitle{
@@ -36,7 +38,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FF9F29;
+            color: #7887c9;
             font-weight: 600;
             @include respondTo(miniTablet){
                 font-size: 34px;
@@ -62,7 +64,7 @@
             justify-content: flex-start;
             color: rgb(52, 51, 51);
             font-weight: 600;
-            border-top: 3px dotted #CCCCCC;
+            border-top: 1px solid #CCCCCC;
             @include respondTo(desktop){
                 border: none;
                 height: 60px;
@@ -172,6 +174,9 @@
                 margin-left: 10px;
                 @include respondTo(miniTablet){
                     font-size: 32px;
+                 }
+                 @include respondTo(desktop){
+                    font-size: 24px;
                  }
              }
         }

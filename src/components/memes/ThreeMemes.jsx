@@ -2,6 +2,7 @@ import React from 'react'
 import "./ThreeMemes.scss"
 import Carousel from 'react-elastic-carousel';
 import axios from '../../Api/axios';
+import { Link } from 'react-router-dom';
 export default function ThreeMemes() {
  const [memes,setMemes] = React.useState([]) 
  const [width, setWidth] = React.useState(window.innerWidth);
@@ -30,11 +31,11 @@ export default function ThreeMemes() {
         {
             memes.map((el)=>{
                 return(
-                    <div className='memeContainer' key={el.id}>
+                    <Link className='memeContainer' to={`/memes/${el._id}`} key={el.id}>
                         <span className='writer'>Writer: {el.admin}</span>
                         <img  className="memeImage" src={el.memeImage} alt="" />
                         <div className='memeDescription'>{el.title}</div>
-                    </div>
+                    </Link>
                 )
             })
         }
