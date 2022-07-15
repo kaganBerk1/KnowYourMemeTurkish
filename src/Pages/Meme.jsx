@@ -11,7 +11,7 @@ export default function Meme(props) {
 
 
  function getData(id){
-    axios.get(`http://localhost:8000/api/meme`,{
+    axios.get(`/api/meme`,{
       params:{
         id:id
       }
