@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/header/Header'
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 import "./CreateMeme.scss"
 import useAuth from '../hooks/useAuth';

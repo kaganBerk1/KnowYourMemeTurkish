@@ -29,7 +29,9 @@ export default function Header() {
                 <Icon className='icon' onClick={()=>{
                     getSearch()
                 }} icon="bx:search-alt" />
-                <input className='searchText' onKeyDown={(e)=>{
+                <input className='searchText' onClick={()=>{
+                  setValue("")
+                }} onKeyDown={(e)=>{
                   if (e.key === 'Enter') {
                     getSearch();
                   }
