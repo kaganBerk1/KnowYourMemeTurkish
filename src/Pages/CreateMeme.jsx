@@ -15,7 +15,13 @@ export default function CreateMeme() {
   const {auth} = useAuth();
   const navigate = useNavigate();
   React.useEffect(()=>{
-        if(window.localStorage.getItem("token")!==auth.token){
+        const itemStr = localStorage.getItem("token")
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+        if (itemStr&&now.getTime() > item.expiry) {
+            // If the item is expired, delete the item from storage
+            // and return null
+            localStorage.removeItem("token")
             navigate("/login");
         }
   })
@@ -69,25 +75,25 @@ export default function CreateMeme() {
                 <div className='rowStyle'>
                 <h3>Mim Başlığı: </h3>
                 <div >
-                    <textarea className='descriptionCover'  onChange={(event) => setTitle(event.target.value)} name="comment" form="usrform">Enter text here...</textarea>
+                    <textarea className='descriptionCover'  onChange={(event) => setTitle(event.target.value)} name="comment" form="usrform"></textarea>
                 </div>
                 </div>
                 <div className='rowStyle'>
                 <h3>Mim Tanımı: </h3>
                 <div >
-                    <textarea className='descriptionCover'  onChange={(event) => setDescription(event.target.value)} name="comment" form="usrform">Enter text here...</textarea>
+                    <textarea className='descriptionCover'  onChange={(event) => setDescription(event.target.value)} name="comment" form="usrform"></textarea>
                 </div>
                 </div>
                 <div className='rowStyle'>
                 <h3>Mim Kaynağı: </h3>
                 <div >
-                    <textarea className='descriptionCover'  onChange={(event) =>setOrigin(event.target.value)} name="comment" form="usrform">Enter text here...</textarea>
+                    <textarea className='descriptionCover'  onChange={(event) =>setOrigin(event.target.value)} name="comment" form="usrform"></textarea>
                 </div>
                 </div>
                 <div className='rowStyle'>
                 <h3>Yazar Notu: </h3>
                 <div >
-                    <textarea className='descriptionCover' onChange={(event) => setAdminNotes(event.target.value)} name="comment" form="usrform">Enter text here...</textarea>
+                    <textarea className='descriptionCover' onChange={(event) => setAdminNotes(event.target.value)} name="comment" form="usrform"></textarea>
                 </div>
                 </div>
                 <div className='rowStyle'>

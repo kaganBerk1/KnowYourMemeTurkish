@@ -19,11 +19,15 @@ export default function Login() {
        password:userPassword
      }
      ).then((res)=>{
+       const now = new Date()
        let token = res.data.token
        setAuth({userName,token});
+       const item = {
+         token: token,
+         expiry: now.getTime() + (24 * 60 * 60 * 1000),
+       }
 
-      window.localStorage.setItem("token", token);
-
+       localStorage.setItem("token", JSON.stringify(item))
        navigate(from);
      }).catch((err)=>{
          console.log(err)
