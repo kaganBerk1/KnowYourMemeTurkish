@@ -21,7 +21,7 @@ export default function CreateMeme() {
     formData.append('description', description);
     formData.append('origin', origin);
     formData.append('writerNote', adminNotes);
-    formData.append('relatedLinks', relatedLinks);
+    relatedLinks.forEach((item) => formData.append("relatedLinks[]", item))
     formData.append('admin', auth?.userName);
     axios.post("http://localhost:8000/api/memeCreate",formData).then(res => {
         console.log(res)
@@ -33,6 +33,7 @@ export default function CreateMeme() {
         const newState = [...relatedLinks]
         newState[index] = newValue
         setRelatedLinks(newState)
+        console.log(relatedLinks)
     }
   return (
     <div>

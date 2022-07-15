@@ -15,7 +15,7 @@ export default function Memes() {
         console.log(err)
     })
  },[])
- 
+
   return (
     <div> 
       <Header></Header>
@@ -23,7 +23,7 @@ export default function Memes() {
         {
          memes.map((el)=>{
               return(
-                  <Link className='wholeMemes' to={`/memes/${el.id}`} key={el.id}>
+                  <Link className='wholeMemes' to={`/memes/${el._id}`} key={el.id}>
                     <img src={el.memeImage}></img>
                     <div className='memeDescription'>{el.title}</div>
                     <span className='writer'>
