@@ -1,10 +1,10 @@
-import Axios  from 'axios'
 import {useRef,useState,useEffect,useContext} from "react"
 import { Link,useNavigate,useLocation, Navigate } from 'react-router-dom'
 import React from 'react'
 import Header from '../components/header/Header'
 import "./Login.scss"
 import useAuth from '../hooks/useAuth'
+import axios from '../Api/axios'
 export default function Login() {
   const {setAuth} = useAuth();
   const navigate = useNavigate();
@@ -14,14 +14,20 @@ export default function Login() {
   const [userPassword,setUserPassword]= useState("")
 
   const signIn = ()=>{
-     Axios.post("http://localhost:8000/api/signin",{
+     axios.post("/api/signin",{
        name:userName,
        password:userPassword
      }
      ).then((res)=>{
-       console.log(res)
+       const now = new Date()
        let token = res.data.token
        setAuth({userName,token});
+       const item = {
+         token: token,
+         expiry: now.getTime() + (24 * 60 * 60 * 1000),
+       }
+
+       localStorage.setItem("token", JSON.stringify(item))
        navigate(from);
      }).catch((err)=>{
          console.log(err)

@@ -5,11 +5,15 @@
     justify-content: center;
     margin-top: 60px;
     @include respondTo(desktop){
-        margin-top: 0px;
+        margin-top: 20px;
         padding: 0 40px ;
     }
     @include respondTo(maxView){
         padding: 0 500px;
+    }
+    .noFound{
+        font-size: 24px;
+        font-weight: 500;
     }
     .wholeMemes{
         display: flex;
@@ -22,6 +26,7 @@
         border-radius: 20px;
         border: 1px dotted #CCCCCC;
         text-decoration: none;
+        border: 1px solid black;
         @include respondTo(xsmobile){
             width: 250px;
             height:200px;
@@ -46,6 +51,7 @@
             width: 348px;
             height:200px;;
             cursor: pointer;
+            object-fit: cover;
             @include respondTo(xsmobile){
                 width: 248px;
                 height:120px;;
@@ -74,10 +80,13 @@
                 font-size: 15px;
             }
             @include respondTo(desktop){
-                font-size: 24px;
+                text-align: center;
+                font-size: 26px;
                 -webkit-line-clamp:2;
                 text-overflow: ellipsis; 
+                word-wrap:break-word;
                 height: 66px;
+                font-weight: 600;
        
             }
         }
@@ -93,7 +102,7 @@
                 right:-70px;
             }
             @include respondTo(desktop){
-               font-size: 24px;
+               font-size: 20px;
                bottom:-25px;
                right: -180px;
                display: flex;

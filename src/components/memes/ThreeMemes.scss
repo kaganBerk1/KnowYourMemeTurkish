@@ -13,6 +13,9 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        border: 1px solid black ;
+        text-decoration: none;
+        margin-top: 30px;
         @include respondTo(xsmobile){
             width: 250px;
             height: 200px;
@@ -20,10 +23,11 @@
         
         .writer{
             position: relative;
-            bottom:20px;
+            bottom:30px;
             color:#D40404;
             font-weight: 600;
             left:20px
+            
         }
         .memeImage{
             width: 350px;
@@ -31,6 +35,7 @@
             border-radius: 30px 30px 0 0;
             position: relative;
             bottom:20px;
+            object-fit: cover;
             @include respondTo(xsmobile){
                 width: 250px;
                 height: 150px;
@@ -50,11 +55,14 @@
             padding-right: 10px;
             text-overflow: ellipsis; 
             text-align: left;
+            color: black;
+            text-align: center;
             @include respondTo(xsmobile){
                 font-size: 15px;
                 margin-top: -20px;
             }
         }
+
     }
 }
 .titleThreeMeme{
