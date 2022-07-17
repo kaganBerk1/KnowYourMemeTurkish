@@ -27,7 +27,7 @@ export default function Meme(props) {
     display:"flex",
     flexDirection:"column",
     alignItems:"flex-start",
-    minWidth:"500px"
+    minWidth:"450px"
   }
   const rowStyle = {
     display:"flex",
@@ -43,8 +43,7 @@ export default function Meme(props) {
     flexWrap:"wrap",
     width:"100%",
     justifyContent:"center",
-    marginLeft:"40px",
-
+    
   }
   return (
     <div>

@@ -31,6 +31,11 @@ $xxxxlarge: 9000px;
       @content;
     }
   }
+  @else if $media == breakPointAfter {
+    @media (min-width:$breakPoint ) and (max-width: $large) {
+      @content;
+    }
+  }
   @else if $media == doubleScreen {
     @media (min-width:$mobile ) and (max-width: $miniTablet) {
       @content;
