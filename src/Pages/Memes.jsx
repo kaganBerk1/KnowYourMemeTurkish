@@ -18,12 +18,12 @@ export default function Memes() {
     }else{
       getAllMemes();
     }
-    setLoading(false)
  },[location])
  function getAllMemes(){
     axios.get("/api/memes").then(res => {
       console.log(res)
       setMemes(res?.data?.memes)
+      setLoading(false)
     }).catch((err)=>{
         console.log(err)
     })
@@ -39,9 +39,11 @@ export default function Memes() {
       }).then(res => {
         console.log(res)
         setMemes(res?.data?.memes)
+        setLoading(false)
       }).catch((err)=>{
           console.log(err)
       })
+     
  }
 
   return (
