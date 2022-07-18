@@ -12,13 +12,13 @@ export default function ThreeMemes() {
    setLoading(true)
    window.addEventListener("resize", () => setWidth(window.innerWidth));
    getThreeMeme();
-   setLoading(false)
  }, []);
 
  function getThreeMeme(){
     axios.get("/api/threeMemes").then(res => {
       console.log(res)
       setMemes(res?.data?.memes)
+      setLoading(false)
     }).catch((err)=>{
         console.log(err)
     })
