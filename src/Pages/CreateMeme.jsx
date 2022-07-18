@@ -36,7 +36,7 @@ export default function CreateMeme() {
     formData.append('writerNote', adminNotes);
     relatedLinks.forEach((item) => formData.append("relatedLinks[]", item))
     formData.append('admin', auth?.userName);
-    axios.post("http://localhost:8000/api/memeCreate",formData).then(res => {
+    axios.post("/api/memeCreate",formData).then(res => {
         console.log(res)
     }).catch((err)=>{
         console.log(err)
