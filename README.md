@@ -12,12 +12,13 @@ https://know-your-meme-turkish.vercel.app/home
 - Full Responsive Page With Vanilla CSS
 - Auth requirments
 - Entering create page by authorized User 
+- AWS S3 Buckets is used for Image Store
 
 
 
 ## Tech Stack
 
- React, CSS3, HTML5, AXIOS
+ React, CSS3, HTML5, AXIOS, AWS
 
 
 
