@@ -36,9 +36,11 @@ const translations=[
 
     },
     {
-        "tr":"Ara...",
-        "en":"Search...",
-        "code":"search"
+        "code":"search",
+        "lang":{
+            "tr":"Ara...",
+            "en":"Search...",
+        }
     },
     {
         "code":"definition",

@@ -10,7 +10,7 @@ import RequireAuth from './components/RequireAuth';
 
 function App() {
   const [width, setWidth] = React.useState(window.innerWidth);
-  const [language, setLanguage] = React.useState("");
+  const [language, setLanguage] = React.useState("tr");
   React.useEffect(() => {
     let lang = navigator.language || navigator.userLanguage; 
     if(lang!=="tr"){
@@ -26,16 +26,26 @@ function App() {
 
     /// set language
     setLanguage(lang)
-
+    
   }, []);
+
+
+function handleLanguage(){
+    if(language ==="tr"){
+       setLanguage("en");
+    }else{
+       setLanguage("tr")
+    }
+
+  }
 
   return (
     <BrowserRouter>
       <Routes>
-          <Route   path="/" element={<Home lang={language}/>}/>
-          <Route   path="home" element={<Home lang={language} />} />
-          <Route   path="memes" element={<Memes  lang={language} width={width} />}/>
-          <Route   path="memes/:memeID" element={<Meme lang={language} width={width} />} />
+          <Route   path="/" element={<Home handleLanguage={handleLanguage} lang={language}/>}/>
+          <Route   path="home" element={<Home handleLanguage={handleLanguage}  lang={language} />} />
+          <Route   path="memes" element={<Memes handleLanguage={handleLanguage}  lang={language} width={width} />}/>
+          <Route   path="memes/:memeID" element={<Meme handleLanguage={handleLanguage}  lang={language} width={width} />} />
           <Route   path="login" element={<Login width={width} />} />
           <Route element={<RequireAuth></RequireAuth>}>
             <Route   path="create" element={<CreateMeme width={width} />} />
