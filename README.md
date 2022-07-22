@@ -2,6 +2,7 @@
 # KnowYourMemeTurkish
 
 This project is for Bunun Nesi Komik which is for storing Turkish Memes like Know You Meme.
+https://know-your-meme-turkish.vercel.app/home
 
 
 
