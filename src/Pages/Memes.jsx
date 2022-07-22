@@ -5,6 +5,7 @@ import dots from "../images/dots.gif"
 import "./Memes.scss"
 import { useEffect } from 'react';
 import axios from '../Api/axios'
+import { getTranslated } from '../utils/utils';
 export default function Memes(props) {
   const [memes,setMemes]= React.useState([]);
   const [loading,setLoading]= React.useState(false);
@@ -57,7 +58,7 @@ export default function Memes(props) {
           ?
           <div className='Cover' >
               <span className='noFound'>
-                Sorry, We do not find your search!
+                {getTranslated(props.lang,"not_found")}
               </span>
           </div>
           :
