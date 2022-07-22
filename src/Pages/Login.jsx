@@ -5,7 +5,7 @@ import Header from '../components/header/Header'
 import "./Login.scss"
 import useAuth from '../hooks/useAuth'
 import axios from '../Api/axios'
-export default function Login() {
+export default function Login(props) {
   const {setAuth} = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,7 +36,7 @@ export default function Login() {
 
   return (
     <div>
-        <Header></Header>
+        <Header {...props}></Header>
         <div className='loginCover'>
                 <div className='loginContainer'>
                         <div className='userCover'>
