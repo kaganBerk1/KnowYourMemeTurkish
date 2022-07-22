@@ -18,7 +18,7 @@ https://know-your-meme-turkish.vercel.app/home
 
 ## Tech Stack
 
- React, CSS3, HTML5, AXIOS, AWS
+ React, CSS3, SCSS , HTML5, AXIOS, AWS
 
 
 
