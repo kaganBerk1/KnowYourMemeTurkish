@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from '../Api/axios'
 import Header from '../components/header/Header'
+import { getTranslated } from '../utils/utils'
 import "./Meme.scss"
 export default function Meme(props) {
   const[meme,setMeme] = React.useState({})
@@ -47,26 +48,26 @@ export default function Meme(props) {
   }
   return (
     <div>
-      <Header></Header>
+      <Header {...props}></Header>
       <div className='coverSingleMeme'>
         <div className='SingleMeme' to={`/memes/${meme.id}`}>
          <div style={props.width>1024?rowStyle:{}}>
           <img className='memeImage' src={meme.memeImage}></img>
           <div style={props.width>1024?columnStyle:{}}>
             <div className='memeTitle'>{meme.title}</div>
-            <div className='descriptionTite' >Tanım:</div>
+            <div className='descriptionTite' >{getTranslated(props.lang,"definition")}:</div>
             <div className='memeDescription'>{meme.description}</div>
           </div> 
          </div>
           <div  style={props.width>1024?detailStyle:{}}>
             <div style={props.width>1024?columnStyle:{}}>
-              <div className='descriptionTite' >Kaynak:</div>
+              <div className='descriptionTite'>{getTranslated(props.lang,"origin")}:</div>
               <div className={props.width>1024?"memeDescription memeDescriptionWrap":"memeDescription"}>{meme.origin}</div>
-              <div className='descriptionTite' >Yazar Notu:</div>
+              <div className='descriptionTite' >{getTranslated(props.lang,"writer_note")}:</div>
               <div className={props.width>1024?"memeDescription memeDescriptionWrap bottomMargin":"memeDescription"}>{meme.writerNote}</div>
             </div>
             <div style={props.width>1024?columnStyle:{}}>
-              <div className='descriptionTite' >İlgili Linkler:</div>
+              <div className='descriptionTite' >{getTranslated(props.lang,"related_links")}:</div>
               <ul className='relatedLinks'>
               {meme.relatedLinks?.map((el)=>{
                   return(
@@ -76,7 +77,7 @@ export default function Meme(props) {
                   )
               })}
               </ul>
-              <div className='descriptionTite' >Yazar:</div>
+              <div className='descriptionTite' >{getTranslated(props.lang,"writer")}:</div>
               <span className='writer'>
                 <div  className="writerImage" />
                 <span  className="writerName">{meme.admin}</span>

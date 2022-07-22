@@ -5,7 +5,7 @@ import dots from "../images/dots.gif"
 import "./Memes.scss"
 import { useEffect } from 'react';
 import axios from '../Api/axios'
-export default function Memes() {
+export default function Memes(props) {
   const [memes,setMemes]= React.useState([]);
   const [loading,setLoading]= React.useState(false);
 
@@ -48,7 +48,7 @@ export default function Memes() {
 
   return (
     <div> 
-      <Header></Header>
+      <Header {...props}></Header>
     {
       !loading?
       <div className='Cover'>

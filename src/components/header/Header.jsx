@@ -3,11 +3,13 @@ import { Icon } from '@iconify/react';
 import { Link, useNavigate,useLocation, createSearchParams } from "react-router-dom";
 import "./Header.scss"
 import axios from '../../Api/axios';
-export default function Header() {
-  const [value, setValue] = useState("Ara...");
+import { getTranslated } from '../../utils/utils';
+export default function Header(props) {
+  const [value, setValue] = useState(getTranslated(props.lang,"search"));
   const navigate = useNavigate();
   const location = useLocation();
-  const from= location.state?.from?.pathname || "";
+
+
   function handleText(event){
     
     setValue(event.target.value)
@@ -39,7 +41,7 @@ export default function Header() {
             </div>
         </div>
         <div className='Tabs'>
-                <Link  to="/memes" className='allMemes'>Bütün Mimler</Link >
+                <Link  to="/memes" className='allMemes'>{getTranslated(props.lang,"all_memes")}</Link >
 
         </div>
     </div>

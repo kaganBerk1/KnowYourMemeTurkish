@@ -4,7 +4,10 @@ import Carousel from 'react-elastic-carousel';
 import axios from '../../Api/axios';
 import { Link } from 'react-router-dom';
 import dots from "../../images/dots.gif"
-export default function ThreeMemes() {
+import { getTranslated } from '../../utils/utils';
+
+
+export default function ThreeMemes(props) {
  const [memes,setMemes] = React.useState([]) 
  const [width, setWidth] = React.useState(window.innerWidth);
  const [loading,setLoading]= React.useState(false);
@@ -26,7 +29,7 @@ export default function ThreeMemes() {
  
  return (
     <div className='Container'>
-        <span className='titleThreeMeme'>Son Eklenenler</span>
+        <span className='titleThreeMeme'>{getTranslated(props.lang,"last_added")}</span>
         <div className='memesContainer'>
         {
             loading ?
@@ -40,7 +43,7 @@ export default function ThreeMemes() {
                     memes.map((el)=>{
                         return(
                             <Link className='memeContainer' to={`/memes/${el._id}`} key={el.id}>
-                                <span className='writer'>Writer: {el.admin}</span>
+                                <span className='writer'> {getTranslated(props.lang,"writer")}: {el.admin}</span>
                                 <img  className="memeImage" src={el.memeImage} alt="" />
                                 <div className='memeDescription'>{el.title}</div>
                             </Link>

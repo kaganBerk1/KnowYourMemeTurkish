@@ -1,8 +1,11 @@
-export const getTranslated = (p_LangCode, p_Str) => {
+import translations from "./translation";
+
+export const getTranslated =(p_LangCode, p_Str)=>{
     //find correct obj
-    const textItem = translation.find(s => s.code === p_Str);
+    const textItem = translations.find(s => s.code === p_Str);
     var text = "";
-    if (textItem) {
+    console.log(textItem)
+    if (textItem.code) {
         try {
             text = textItem.lang[`${p_LangCode}`];
 
@@ -18,4 +21,3 @@ export const getTranslated = (p_LangCode, p_Str) => {
     return text;
 }
 
-exports.getTranslated=getTranslated;
