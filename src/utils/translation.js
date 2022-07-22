@@ -98,6 +98,14 @@ const translations=[
             "en":"click :D",
         }
     },
+    {
+        "code":"not_found",
+        "lang":{
+            "tr":"Üzgünüz, aradığınızı bulamadık!",
+            "en":"Sorry, we could not find what your are looking for!",
+        }
+    },
+
 ]
 
 export default translations;

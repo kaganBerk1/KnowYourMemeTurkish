@@ -62,7 +62,7 @@
             width: 24px;
             height: 24px;
             margin-left: 20px;
-            border-right: 2px solid black;
+            border-right: 1.6px solid black;
         }
         .searchText{
             background:transparent;
@@ -123,9 +123,23 @@
         }
     }
     .language{
-        margin-right: 60px;
         display: flex;
         align-items: center;
+        @include respondTo(mobile){
+            margin-right: 15px;  
+        }
+        @include respondTo(largeMobile){
+            margin-right: 40px;
+        }@include respondTo(desktop){
+            margin-right: 60px;
+        }@include respondTo(miniTablet){
+            margin-right: 90px;
+        }@include respondTo(doubleScreen){
+            margin-right: 40px;
+        }@include respondTo(xsmobile){
+            margin-right:15px;
+
+        }
         span{
             color:#6A3131;
             font-size: 15px;
