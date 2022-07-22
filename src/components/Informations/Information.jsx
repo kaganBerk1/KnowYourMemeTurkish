@@ -12,6 +12,9 @@ export default function Information(props) {
             <span className='title'>{getTranslated(props.lang,"meme_meaning")}</span>
             <div>{getTranslated(props.lang,"description_meme")}</div>
         </div>
+        <div className='mailContainer' >
+        {getTranslated(props.lang,"mail")} <a href="mailto:bununnesikomik1@gmail.com">{getTranslated(props.lang,"click_link")}</a>
+        </div>
     </div>
   )
 }

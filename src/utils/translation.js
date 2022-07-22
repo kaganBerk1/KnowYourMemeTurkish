@@ -85,14 +85,18 @@ const translations=[
         }
     },
     {
-        "tr":"Eğer ekletmek istediğiniz bir mim varsa linke tıklayınız :D",
-        "en":"If you have a joke you want to add, click the link :D",
-        "code":"mail"
+        "code":"mail",
+        "lang":{
+            "tr":"Eğer ekletmek istediğiniz bir mim varsa ",
+            "en":"If you have a joke you want to add, ",
+        }
     },
     {
-        "tr":"linke tıklayınız :D",
-        "en":"click the link :D",
-        "code":"click_link"
+        "code":"click_link",
+        "lang":{
+            "tr":"tıklayınız :D",
+            "en":"click :D",
+        }
     },
 ]
 
